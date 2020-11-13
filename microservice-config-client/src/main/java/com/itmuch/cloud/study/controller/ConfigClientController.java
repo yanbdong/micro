@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 // 配置更改时得到特殊处理
-// 需要手动 post /actuator/refresh
+// 需要手动 post /actuator/refresh 
 @RefreshScope
 public class ConfigClientController {
 
