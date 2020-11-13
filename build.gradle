@@ -8,6 +8,10 @@ plugins {
 group 'com.yanbdong'
 version '1.0-SNAPSHOT'
 
+ext {
+    set('springCloudVersion', "Hoxton.SR9")
+}
+
 subprojects {
 
     apply plugin: 'java'
@@ -21,12 +25,16 @@ subprojects {
         mavenCentral()
     }
 
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-actuator'
-        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
         implementation 'org.springframework.boot:spring-boot-starter-web'
         compileOnly 'org.projectlombok:lombok'
-        runtimeOnly 'com.h2database:h2'
         annotationProcessor 'org.projectlombok:lombok'
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

@@ -1,6 +1,8 @@
 server:
   port: 8001
 spring:
+  application:
+    name: microservice-simple-provider-user
   jpa:
     generate-ddl: false
     show-sql: true
@@ -17,16 +19,29 @@ logging:                                # 配置日志级别，让hibernate打�
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:123@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true             # 将自己的IP注册到Eureka Server，否则注册自己所在的主机的hostname
+    metadata-map:
+      tag: "your know?"
+
 ## INFO
 info:
   app:
     name: ${project.artifactId}
-    encoding: ${project.build.sourceEncoding)
+    encoding: ${project.build.sourceEncoding}
     java:
       source: ${java.version}
       target: ${java.version}
 management:
   security:
     enabled: false
+
+
+
+
 
 

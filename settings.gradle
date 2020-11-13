@@ -8,4 +8,7 @@ pluginManagement {
 rootProject.name = 'micross'
 include 'microservice-simple-provider-user'
 include 'microservice-simple-consumer-movie'
+include 'microservice-discovery-eureka'
+include 'microservice-config-server'
+include 'microservice-config-client'
 

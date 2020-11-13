@@ -2,13 +2,16 @@ package com.itmuch.cloud.study;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
-@EnableDiscoveryClient
+/**
+ * 使用Eureka做服务发现.
+ */
 @SpringBootApplication
-public class ProviderUserApplication {
+@EnableEurekaServer
+public class EurekaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderUserApplication.class, args);
+        SpringApplication.run(EurekaApplication.class, args);
     }
 }

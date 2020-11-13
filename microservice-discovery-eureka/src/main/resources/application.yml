@@ -1,0 +1,18 @@
+server:
+  port: 8761                    # 指定该Eureka实例的端口
+eureka:
+  client:
+    registerWithEureka: false   # 是否将自己注册到Eureka，对于server角色不需要
+    fetchRegistry: false        # 从server获取注册信息，对于单节点server不需要
+    serviceUrl:
+      defaultZone: http://user:123@localhost:8761/eureka/   # server之间交互地址
+spring:
+  security:
+    basic:
+      enabled: true             # 开启基于HTTP basic的认证
+    user:
+      name: user                # 配置登录的账号是user，默认也是user
+      password: 123     # 配置登录的密码是password123，默认密码随机，在启动时打印出来
+
+# 参考文档：http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_standalone_mode
+# 参考文档：http://my.oschina.net/buwei/blog/618756
