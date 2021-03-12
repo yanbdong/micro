@@ -1,2 +1,8 @@
 server:
   port: 8082
+
+spring:
+  rabbitmq:
+    queue_name: RuRuShioQueue
+    exchange_name: RuRuShioExchange
+    routing_key: RuRuShioRoutingKey

@@ -10,6 +10,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.context.annotation.Import;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,6 +42,8 @@ public class MovieController {
     private UserFeignClient userFeignClient;
     private UserFeignClient userUserFeignClient;
     private UserFeignClient adminUserFeignClient;
+    @Autowired
+    private Environment mEnvironment;
 
     // 自定义Feign
     @Autowired
